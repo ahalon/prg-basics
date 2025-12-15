@@ -1,5 +1,13 @@
 def f(subjects):
-    return max(subjects, key=lambda sub: sum(subjects[sub])/len(subjects[sub]))
+     best_subject = None
+     best_avg = -1
 
-# Test
-print(f({"math":[3,4,4], "geo":[5,4,4,4], "comp":[5,4]}))  # "comp"
+     for subject, grades in subjects.items():
+         avg = sum(grades)/len(grades)
+     if avg > best_avg:
+             best_avg = avg
+             best_subject = subject
+     return best_subject
+    
+
+
